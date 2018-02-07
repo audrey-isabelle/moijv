@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class HomeController extends Controller {
     // Permet de lui dire le chemain jusqu'à home (localhost:8000/home)
-    
+    // uri (à voir avec l'url)
     /** 
      * @Route("/")
      * @Route("/home")     

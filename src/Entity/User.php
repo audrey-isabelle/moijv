@@ -2,7 +2,10 @@
 
 namespace App\Entity; //namespace racine
 
+
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -54,7 +57,15 @@ class User
     private $birthdate;
     // DateTime est un namespace racine,
     
+     /**
+     * @ORM\OneToMany(targetEntity="Product", mappedBy="user")
+     * @var Collection
+     */
+    private $products;
     
+    public function __construct() {
+       $this->products = new ArrayCollection(); 
+    }
     
     public function getId() {
         return $this->id;
@@ -83,7 +94,10 @@ class User
     public function getBirthdate(): \DateTime {
         return $this->birthdate;
     }
-
+    
+    public function getProducts(): Collection {
+        return $this->products;
+    }
     public function setId($id) {
         $this->id = $id;
         return $this;
@@ -118,6 +132,10 @@ class User
         $this->birthdate = $birthdate;
         return $this;
     }
-
+    
+    public function setProducts(Collection $products) {
+        $this->products = $products;
+        return $this;
+    }
 
 }

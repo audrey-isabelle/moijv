@@ -2,7 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        {# le dashboard est à afficher par défaut si le titre n'est pas défini; là il est remplacé par le titre dans le fichier list_user.html.twig #}
+        <title>MoiJv - {% block title %}Dashboard{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
