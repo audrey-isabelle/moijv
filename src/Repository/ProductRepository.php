@@ -28,7 +28,7 @@ class ProductRepository extends ServiceEntityRepository
         // LEFT JOIN tag t ON tag.id = product_tag.tag_id
         // WHERE tag.id = 25
         return $this->createQueryBuilder('p')
-                ->lefJoin('p.tags', 't')
+                ->leftJoin('p.tags', 't')
                 ->leftJoin(Product::class, 'p2', Join::WITH, 'p2.id = p.id')
                 ->leftJoin('p2.tags', 't2')
                 ->addSelect('t')
