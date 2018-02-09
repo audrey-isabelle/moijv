@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Ajouter un produit{% endblock %}
+
+{% block body %}
+
+    <h1>Ajout d'un produit</h1>
+    
+    {{ form_start(form) }} {# début de notre formulaire #}
+    {{ form_widget(form) }} {# contenu de notre formulaire #}
+    {{ form_end(form) }} {# fin de notre formulaire #}
+    
+{% endblock %}
+
+
+
+
+

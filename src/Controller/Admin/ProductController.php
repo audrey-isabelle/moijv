@@ -23,8 +23,8 @@ class ProductController extends Controller
     /**
      * @Route("/admin/product/tag/{name}", name="list_product_by_tag")
      */
-    public function getListByTag(Tag $tag) {
-        $products = $tag->getProducts();
+    public function getListByTag(Tag $tag, ProductRepository $productRepo) {
+        $products = $productRepo->findByTagWithTags($tag); // pour repérer la liste de produits
         return $this->render('admin/list_product_by_tag.html.twig', [
             'products' => $products,
             'tag' => $tag
