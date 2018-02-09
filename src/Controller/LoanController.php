@@ -41,7 +41,8 @@ class LoanController extends Controller
             // Enregistrement du produit
             $manager->persist($product);
             $manager->flush();
-            
+            //redirectionne vers le produit : ce qui vaut en php procédural à faire -> (location:my_products.html.twig)
+             return $this->redirectToRoute('m_products');
         }
         return $this->render('add_product.html.twig', [
             
