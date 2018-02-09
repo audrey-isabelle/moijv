@@ -5,4 +5,5 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
-/nbproject/private/
+/nbproject/
+/public/uploads/
